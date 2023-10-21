@@ -10,10 +10,6 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                    echo "Multiline shell steps works too"
-                    whoami
-                    pwd
-                    ls -la
                     npm i
                     npx playwright install
                     npx playwright test
