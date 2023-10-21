@@ -15,6 +15,7 @@ pipeline {
                     pwd
                     ls -la
                     npm i
+                    npx playwright install
                     npx playwright test
                 '''
             }
