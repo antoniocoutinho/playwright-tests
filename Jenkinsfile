@@ -16,15 +16,11 @@ pipeline {
                 '''
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+        
+       post{
+           always {
+               archiveArtifacts artifacts: 'playwright-report/index.html', followSymlinks: false
+           }
+       }
     }
 }
